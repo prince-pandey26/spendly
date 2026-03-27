@@ -3,9 +3,38 @@
 {% block title %}Privacy Policy - Spendly{% endblock %}
 
 {% block content %}
-<section class="content-section">
+<style>
+.legal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+.legal-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #1a1a2e;
+}
+.legal-container .last-updated {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+}
+.legal-container h2 {
+    font-size: 1.5rem;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+.legal-container p {
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 15px;
+}
+</style>
+
+<div class="legal-container">
     <h1>Privacy Policy</h1>
-    <p>Last updated: March 27, 2026</p>
+    <p class="last-updated">Last updated: March 27, 2026</p>
 
     <h2>1. Information We Collect</h2>
     <p>We collect information you provide when creating an account and tracking expenses.</p>
@@ -21,5 +50,5 @@
 
     <h2>5. Contact Us</h2>
     <p>If you have questions about this Privacy Policy, please contact us.</p>
-</section>
+</div>
 {% endblock %}
