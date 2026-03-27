@@ -4,6 +4,187 @@
 
 {% block content %}
 
+<style>
+/* Hero enhancements */
+.hero {
+    padding: 6rem 2rem 5rem;
+    gap: 5rem;
+}
+
+.hero-badge {
+    background: linear-gradient(135deg, var(--accent-light), #d4e8dc);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(26, 71, 42, 0.1);
+}
+
+.hero-title {
+    font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+}
+
+/* Enhanced buttons */
+.btn-primary {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--ink), #2d3436);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--accent), #2d5a3d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 71, 42, 0.25);
+}
+
+.btn-ghost {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background: rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+    background: white;
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Enhanced mock card */
+.mock-card {
+    padding: 2.5rem;
+    max-width: 400px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.08),
+        0 8px 20px rgba(0,0,0,0.04);
+    border-radius: 24px;
+    transition: transform 0.3s ease;
+}
+
+.mock-card:hover {
+    transform: translateY(-4px);
+}
+
+.mock-card-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.mock-total {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--ink), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mock-bar-track {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.mock-bar {
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--accent), #2d5a3d);
+}
+
+.mock-bar-2 { background: linear-gradient(90deg, var(--accent-2), #d4a04d); }
+.mock-bar-3 { background: linear-gradient(90deg, #5b7fa6, #3d5a7a); }
+.mock-bar-4 { background: linear-gradient(90deg, #8b5e83, #6b4a63); }
+
+/* Enhanced features section */
+.features {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 100%);
+}
+
+.feature-card {
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(228, 225, 218, 0.6);
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    border-color: var(--accent);
+}
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-light);
+    border-radius: 14px;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.feature-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.875rem;
+}
+
+.feature-body {
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+/* Enhanced CTA section */
+.cta-section {
+    padding: 7rem 2rem;
+    background: linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%);
+}
+
+.cta-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.25rem;
+}
+
+.cta-body {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: var(--ink-soft);
+}
+
+.cta-section .btn-primary {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* Footer links styling */
+.footer-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--paper);
+}
+</style>
+
 <section class="hero">
     <div class="hero-inner">
         <div class="hero-badge">Personal Finance Tracker</div>
