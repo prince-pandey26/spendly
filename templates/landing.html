@@ -4,270 +4,477 @@
 
 {% block content %}
 
-<style>
-/* Hero enhancements */
-.hero {
-    padding: 6rem 2rem 5rem;
-    gap: 5rem;
-}
-
-.hero-badge {
-    background: linear-gradient(135deg, var(--accent-light), #d4e8dc);
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    box-shadow: 0 2px 8px rgba(26, 71, 42, 0.1);
-}
-
-.hero-title {
-    font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-    line-height: 1.05;
-    margin-bottom: 1.5rem;
-}
-
-.hero-subtitle {
-    font-size: 1.15rem;
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-}
-
-/* Enhanced buttons */
-.btn-primary {
-    padding: 0.85rem 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    background: linear-gradient(135deg, var(--ink), #2d3436);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, var(--accent), #2d5a3d);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(26, 71, 42, 0.25);
-}
-
-.btn-ghost {
-    padding: 0.85rem 2rem;
-    font-size: 1rem;
-    font-weight: 500;
-    background: rgba(255,255,255,0.5);
-    transition: all 0.3s ease;
-}
-
-.btn-ghost:hover {
-    background: white;
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* Enhanced mock card */
-.mock-card {
-    padding: 2.5rem;
-    max-width: 400px;
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.08),
-        0 8px 20px rgba(0,0,0,0.04);
-    border-radius: 24px;
-    transition: transform 0.3s ease;
-}
-
-.mock-card:hover {
-    transform: translateY(-4px);
-}
-
-.mock-card-header {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-}
-
-.mock-total {
-    font-size: 2rem;
-    background: linear-gradient(135deg, var(--ink), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.mock-bar-track {
-    height: 8px;
-    border-radius: 4px;
-}
-
-.mock-bar {
-    border-radius: 4px;
-    background: linear-gradient(90deg, var(--accent), #2d5a3d);
-}
-
-.mock-bar-2 { background: linear-gradient(90deg, var(--accent-2), #d4a04d); }
-.mock-bar-3 { background: linear-gradient(90deg, #5b7fa6, #3d5a7a); }
-.mock-bar-4 { background: linear-gradient(90deg, #8b5e83, #6b4a63); }
-
-/* Enhanced features section */
-.features {
-    padding: 6rem 2rem;
-    background: linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 100%);
-}
-
-.feature-card {
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(228, 225, 218, 0.6);
-}
-
-.feature-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-    border-color: var(--accent);
-}
-
-.feature-icon {
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--accent-light);
-    border-radius: 14px;
-    font-size: 1.5rem;
-    margin-bottom: 1.25rem;
-}
-
-.feature-title {
-    font-size: 1.35rem;
-    margin-bottom: 0.875rem;
-}
-
-.feature-body {
-    font-size: 0.95rem;
-    line-height: 1.75;
-}
-
-/* Enhanced CTA section */
-.cta-section {
-    padding: 7rem 2rem;
-    background: linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%);
-}
-
-.cta-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1.25rem;
-}
-
-.cta-body {
-    font-size: 1.1rem;
-    margin-bottom: 2.5rem;
-    color: var(--ink-soft);
-}
-
-.cta-section .btn-primary {
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-}
-
-/* Footer links styling */
-.footer-links {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.footer-links a {
-    color: var(--ink-faint);
-    font-size: 0.85rem;
-    transition: color 0.2s;
-}
-
-.footer-links a:hover {
-    color: var(--paper);
-}
-</style>
-
-<section class="hero">
-    <div class="hero-inner">
-        <div class="hero-badge">Personal Finance Tracker</div>
+<section class="hero-modern">
+    <div class="hero-content">
+        <span class="hero-badge">Free to use • No credit card needed</span>
         <h1 class="hero-title">
-            Know where your<br>
-            <em>money goes</em>
+            Track every rupee.<br>
+            <span class="highlight-green">Know where it goes.</span>
         </h1>
-        <p class="hero-subtitle">
-            Log expenses, understand your spending patterns,
-            and take control of your financial life —
-            one transaction at a time.
+        <p class="hero-description">
+            Spendly helps you log expenses, understand your spending habits, and take control of your money — all in one simple, beautiful dashboard.
         </p>
         <div class="hero-actions">
-            <a href="{{ url_for('register') }}" class="btn-primary">Start tracking free</a>
-            <a href="{{ url_for('login') }}" class="btn-ghost">Sign in</a>
+            <a href="{{ url_for('register') }}" class="btn-primary">Create free account</a>
+            <a href="#how-it-works" class="btn-secondary">See how it works</a>
         </div>
     </div>
-    <div class="hero-visual">
-        <div class="mock-card">
-            <div class="mock-card-header">
-                <span class="mock-label">March 2026</span>
-                <span class="mock-total">₹12,450</span>
+
+    <div class="dashboard-preview">
+        <div class="dashboard-card">
+            <div class="dashboard-header">
+                <div class="dashboard-title">This month</div>
+                <div class="dashboard-amount">₹18,240</div>
             </div>
-            <div class="mock-bars">
-                <div class="mock-bar-row">
-                    <span class="mock-cat">Bills</span>
-                    <div class="mock-bar-track">
-                        <div class="mock-bar" style="width: 72%"></div>
-                    </div>
-                    <span class="mock-amt">₹4,500</span>
+            <div class="dashboard-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Budget left</span>
+                    <span class="stat-value green">₹6,760</span>
                 </div>
-                <div class="mock-bar-row">
-                    <span class="mock-cat">Food</span>
-                    <div class="mock-bar-track">
-                        <div class="mock-bar mock-bar-2" style="width: 52%"></div>
-                    </div>
-                    <span class="mock-amt">₹3,200</span>
+                <div class="stat-item">
+                    <span class="stat-label">Transactions</span>
+                    <span class="stat-value">34</span>
                 </div>
-                <div class="mock-bar-row">
-                    <span class="mock-cat">Health</span>
-                    <div class="mock-bar-track">
-                        <div class="mock-bar mock-bar-3" style="width: 33%"></div>
+            </div>
+            <div class="category-bars">
+                <div class="category-item">
+                    <div class="category-label">
+                        <span>Food</span>
+                        <span>₹5,200</span>
                     </div>
-                    <span class="mock-amt">₹2,050</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill food" style="width: 65%"></div>
+                    </div>
                 </div>
-                <div class="mock-bar-row">
-                    <span class="mock-cat">Transport</span>
-                    <div class="mock-bar-track">
-                        <div class="mock-bar mock-bar-4" style="width: 28%"></div>
+                <div class="category-item">
+                    <div class="category-label">
+                        <span>Travel</span>
+                        <span>₹3,800</span>
                     </div>
-                    <span class="mock-amt">₹1,800</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill travel" style="width: 48%"></div>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-label">
+                        <span>Bills</span>
+                        <span>₹9,240</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill bills" style="width: 85%"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="features">
-    <div class="features-inner">
+<section class="features" id="how-it-works">
+    <div class="features-header">
+        <h2>Simple. Smart. Stress-free.</h2>
+        <p>Everything you need to manage your money, nothing you don't.</p>
+    </div>
+    <div class="features-grid">
         <div class="feature-card">
-            <div class="feature-icon">₹</div>
-            <h3 class="feature-title">Log expenses instantly</h3>
-            <p class="feature-body">Add any expense in seconds. Category, amount, date, description — all in one simple form.</p>
+            <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </div>
+            <h3>Log in seconds</h3>
+            <p>Add any expense in just a few taps. No complex forms, no hassle.</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">◎</div>
-            <h3 class="feature-title">Understand your patterns</h3>
-            <p class="feature-body">See exactly where your money goes with category breakdowns and monthly summaries.</p>
+            <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                </svg>
+            </div>
+            <h3>Track over time</h3>
+            <p>See your spending patterns by week, month, or year. Spot trends easily.</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">◷</div>
-            <h3 class="feature-title">Filter by time period</h3>
-            <p class="feature-body">View your spending for any date range — last week, last month, or a custom period.</p>
+            <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+            </div>
+            <h3>Bank-level security</h3>
+            <p>Your data is encrypted and secure. We never sell your information.</p>
         </div>
     </div>
 </section>
 
 <section class="cta-section">
-    <div class="cta-inner">
-        <h2 class="cta-title">Ready to take control?</h2>
-        <p class="cta-body">Join thousands of people who track their expenses with Spendly.</p>
-        <a href="{{ url_for('register') }}" class="btn-primary">Create free account</a>
+    <div class="cta-content">
+        <h2>Start tracking today</h2>
+        <p>Join thousands of people who use Spendly to stay on top of their finances.</p>
+        <a href="{{ url_for('register') }}" class="btn-primary btn-large">Create your free account</a>
     </div>
 </section>
+
+<style>
+/* Hero Section */
+.hero-modern {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, #fafafa 0%, #ffffff 50%, #f0fdf4 100%);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 680px;
+    margin-bottom: 4rem;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #0f172a;
+    margin-bottom: 1.25rem;
+}
+
+.highlight-green {
+    color: #16a34a;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #64748b;
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.875rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.875rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    border-color: #16a34a;
+    color: #16a34a;
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+}
+
+/* Dashboard Preview Card */
+.dashboard-preview {
+    width: 100%;
+    max-width: 420px;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 20px 40px -10px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-header {
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-title {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.dashboard-amount {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: #0f172a;
+    font-weight: 400;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.stat-value.green {
+    color: #16a34a;
+}
+
+/* Category Bars */
+.category-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.category-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.category-label span:first-child {
+    color: #334155;
+    font-weight: 500;
+}
+
+.category-label span:last-child {
+    color: #64748b;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+.progress-fill.food {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.progress-fill.travel {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.progress-fill.bills {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+/* Features Section */
+.features {
+    padding: 6rem 2rem;
+    background: #ffffff;
+}
+
+.features-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.features-header h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.features-header p {
+    font-size: 1.125rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 16px;
+    background: #fafafa;
+    border: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+    border-color: #dcfce7;
+}
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    background: #dcfce7;
+    color: #16a34a;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+}
+
+.feature-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.125rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-modern {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dashboard-card {
+        padding: 1.5rem;
+    }
+
+    .dashboard-amount {
+        font-size: 2rem;
+    }
+
+    .features {
+        padding: 4rem 1.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-section {
+        padding: 4rem 1.5rem;
+    }
+}
+</style>
 
 {% endblock %}
